@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/chantellelloyd55555/Fishing-Data_1960-2018/main/data/ENSO_Data.csv"
+  },
+  "params": [
+    {
+      "name": "country_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Indonesia",
+          "China",
+          "Australia",
+          "New Zealand",
+          "Papua New Guinea",
+          "Philippines",
+          "Japan",
+          "United States of America",
+          "Chile",
+          "Canada",
+          "Guatemala",
+          "Russia",
+          "Peru",
+          "Solomon Islands",
+          "Mexico",
+          "Thailand",
+          "Costa Rica",
+          "Vietnam",
+          "Vanuatu",
+          "Malaysia",
+          "Panama",
+          "Ecuador",
+          "Korea"
+        ],
+        "name": "Select Country: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "line", "opacity": 0.5},
+      "encoding": {
+        "x": {"timeUnit": "year", "field": "date","title":"Year"},
+        "y": {"field": "data", "type": "quantitative", "title": "ENSO Severity Rating"},
+        "tooltip": [
+          {"timeUnit": "year", "field": "Year"},
+          {"field": "data", "type": "quantitative"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/chantellelloyd55555/Fishing-Data_1960-2018/main/data/linegraph_map.csv"
+      },
+      "transform": [{"filter": "datum.Country == country_selection"}],
+      "mark": {"type": "line", "point": true, "color": "green"},
+      "encoding": {
+        "x": {"timeUnit": "year", "field": "Year"},
+        "y": {
+          "field": "Fishing",
+          "type": "quantitative",
+          "title": "Fish Caught (kg)"
+        },
+        "tooltip": [
+          {"timeUnit": "year", "field": "Year"},
+          {"field": "Fishing", "type": "quantitative"},
+          {"field": "Country", "type": "nominal"}
+        ]
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}},
+  "config": {}
+}

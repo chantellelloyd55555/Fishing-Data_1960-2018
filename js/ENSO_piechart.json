@@ -1,0 +1,12 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple pie chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/chantellelloyd55555/Fishing-Data_1960-2018/main/data/Enso_Piechart.csv"
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "Value", "type": "quantitative"},
+    "color": {"field": "Category", "type": "nominal"}
+  }
+}

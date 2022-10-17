@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+	align-items: center;
+	background-color: #dadada;
+	font-family: 'Montserrat', sans-serif;
+	text-align: justify;
+}
+
+.h1 {
+	text-align: "center";
+	align-items: center;
+}
+.grid {
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+body div {
+	padding: 10px;
+	width: 30%;
+}
+
+#map {
+	width: 64%;
+}
+
+#linegraph {
+	width: 50%;
+}
+
+#piechart {
+	width: 60%;
+}

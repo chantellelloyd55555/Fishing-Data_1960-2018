@@ -1,0 +1,73 @@
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+  
+</head>
+  <title>Global Fishing Data</title>
+<body>
+  <h1 style="text-align: center; font-size: 45px;">Global Weather Events Effect Countries Aquaculture</h1>
+  <div class="grid">
+   
+      <p><span style="color: rgb(241, 135, 59);"><b>The Pacific Ring of Fire</b></span> is a region around the Pacific Ocean that is greatly effected by the movement of tectonic plates. Countries that border the 
+      <span style="color: rgb(241, 135, 59);"><b></b> The Pacific Ring of Fire</b></span> not only expericence larger amounts of volcanic action and earthquakes, but are also greatly effected by the global weather pattern known as</p>
+      <p><span style="color: rgb(8, 55, 240);"></b><u>El Nino-Sourthern Oscillation (ENSO)</u></b>. </p>
+  </div>
+    <div id="map"></div>
+
+  </div>
+      <p><span style="color:rgb(8, 55, 240);"></b><u>El Nino-Sourthern Oscillation</u></b></span> is a weather event that mainly effects the Pacific Ocean region, in particular the Eastern Pacific Ocean close to the equator. This event cycles between an El Nino and
+      a La Nina event every 3-7 years, with the severity of the events constantly changing. The main difference between cycles is the ocean water temperature and direction of current flow within the Pacific Ocean.
+      These environmental factors greatly affect the fish populations off the coast of certain countries at certain points of an ENSO cycle. The </b><u> graph below</b></u> represents the severity rating of the El Nino and La Nina cycles,
+      overlayed with a selected countries fishing data over time. </p>
+    
+  </div>
+    <div id="linechart"></div>
+
+    <div>
+      The ENSO cycle from the years 1980-2018 has constantly changed year to year, with the effect on particular countries Aquaculture being very distinct. Since 1980 La Nina has been the more 
+      promenint cycle at 48%. 
+
+    </div>
+    <div id="Piechart"></div>
+
+</div>
+Visualisations of the ENSO weather cycles in the Pacific
+<div class="row">
+  <div class="column">
+    <img src="img/El Nino.png" >
+  </div>
+  <div class="column">
+    <img src="img/La Nina.png">
+  </div>
+  <div class="column">
+    <img src="img/Neutral.png">
+  </div>
+
+
+  <script type="text/javascript">
+  var map = "js/Interactive_map.json";
+  vegaEmbed('#map', map).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var linechart = "js/ENSO_country_linegraph.json";
+  vegaEmbed('#linechart', linechart).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var Piechart = "js/ENSO_piechart.json";
+  vegaEmbed('#Piechart', Piechart).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+
+  </script>
+</body>
+</html>
